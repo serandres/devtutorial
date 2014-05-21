@@ -13,5 +13,5 @@ class LibroAdmin(admin.ModelAdmin):
 
 	imagen_portadas.allow_tags = True
 
-# Register your models here.
+# Register your models 
 admin.site.register(Libro,LibroAdmin)
