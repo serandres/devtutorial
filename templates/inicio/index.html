@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>este esl index2</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+	<div>
+		<form class="" action="/libros/buscar/" method="POST">
+		{% csrf_token %}
+		<input type="text" name="buscalo" placehoder="Buscar">
+		<button type="submit" value="Buscar">Buscar</button>
+		</form>
+	</div>
+	{% if user.is_authenticated %}
+		Bienvenido {{user.username|capfirst}}
+		<a href="/cerrar/">Salir</a>
+	{% else %}	
+	<form method="POST">
+		{% csrf_token %}
+		<input name="username" type="text" id="inputEmail" placeholder="Usuario">
+		<input name="password" type="password" id="inputPassword" placeholder="Contraseña">
+		<input type="submit" value="Enviar">
+	</form>
+	<a href="/registrarse/">Registrarse</a>
+	{% endif %}
+</head>
+<body>
+</body>
+</html>
