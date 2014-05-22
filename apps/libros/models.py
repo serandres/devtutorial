@@ -13,4 +13,4 @@ class Libro(models.Model):
 		return self.nombre
 
 	def traer_url_portadas(self):
-		return settings.MEDIA_ROOT+'/'+str(self.portada)
+		return settings.MEDIA_URL+'/'+str(self.portada)
